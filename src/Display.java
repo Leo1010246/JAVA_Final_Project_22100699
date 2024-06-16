@@ -1,9 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.lang.reflect.Field;
-import org.fusesource.jansi.Ansi;
-import org.fusesource.jansi.AnsiConsole;
 
 public class Display {
 
@@ -13,7 +10,6 @@ public class Display {
     public static char[][] screen;
 
     public static int note_num; // NoteDrop 숫자
-    //public static int[] note_num_key_array;
 
     public static String music_name;
 
@@ -21,12 +17,6 @@ public class Display {
     public static int score; // (노트 하나당 1~5점)의 합
 
     public static int key_note_count;
-    //public static int now_key_note_count;
-
-    //public static int time_ods; // 0.1초 단위
-
-    public static boolean music_end;
-
 
     public Display(int note_num, String music_name, int key_note_count) {
         Display.screen_width = 20;
@@ -35,17 +25,10 @@ public class Display {
         Display.screen = new char[Display.screen_height][Display.screen_width];
 
         Display.note_num = note_num;
-        //Display.note_num_key_array = new int[note_num];
-        //for(int i = 0 ; i < note_num ; i++) Display.note_num_key_array[i] = 0;
         Display.music_name = music_name; // NoteDrop 숫자
         Display.key_note_count = key_note_count; // 총 노트 수
-        //Display.now_key_note_count = 0; // 현재까지 생성한 노트 수
         Display.max_score = key_note_count * 5;
         Display.score = 0;
-
-        //Display.time_ods = 0;
-
-        Display.music_end = false;
     }
 
     public Display(int note_num, String music_name, int key_note_count, int screen_width, int screen_height) {
@@ -55,17 +38,10 @@ public class Display {
         Display.screen = new char[Display.screen_height][Display.screen_width];
 
         Display.note_num = note_num;
-        //Display.note_num_key_array = new int[note_num];
-        //for(int i = 0 ; i < note_num ; i++) Display.note_num_key_array[i] = 0;
         Display.music_name = music_name; // NoteDrop 숫자
         Display.key_note_count = key_note_count; // 총 노트 수
-        //Display.now_key_note_count = 0; // 현재까지 생성한 노트 수
         Display.max_score = key_note_count * 5;
         Display.score = 0;
-
-        //Display.time_ods = 0;
-
-        Display.music_end = false;
     }
 
     public int getScreen_width() {
@@ -95,31 +71,31 @@ public class Display {
         //System.out.flush();
     }
 
-    public static void clearScreenJ() {
-        AnsiConsole.systemInstall();
-        AnsiConsole.out.print(Ansi.ansi().eraseScreen().cursor(1, 1));
-        AnsiConsole.systemUninstall();
-    }
-
-    public void printScreenJ() throws IOException {
-        AnsiConsole.systemInstall();
-
-        gotoxy(1, 1);
-        for(int i = 0 ; i < screen_height ; i++) {
-            String s = "";
-            for(int j = 0 ; j < screen_width ; j++) {
-                s += screen[i][j];
-            }
-            gotoxy(1, i + 1);
-            System.out.print(s);
-        }
-
-        AnsiConsole.systemUninstall();
-    }
-
-    protected static void gotoxy(int x, int y) {
-        AnsiConsole.out.print(Ansi.ansi().cursor(y, x));
-    }
+//    public static void clearScreenJ() {
+//        AnsiConsole.systemInstall();
+//        AnsiConsole.out.print(Ansi.ansi().eraseScreen().cursor(1, 1));
+//        AnsiConsole.systemUninstall();
+//    }
+//
+//    public void printScreenJ() throws IOException {
+//        AnsiConsole.systemInstall();
+//
+//        gotoxy(1, 1);
+//        for(int i = 0 ; i < screen_height ; i++) {
+//            String s = "";
+//            for(int j = 0 ; j < screen_width ; j++) {
+//                s += screen[i][j];
+//            }
+//            gotoxy(1, i + 1);
+//            System.out.print(s);
+//        }
+//
+//        AnsiConsole.systemUninstall();
+//    }
+//
+//    protected static void gotoxy(int x, int y) {
+//        AnsiConsole.out.print(Ansi.ansi().cursor(y, x));
+//    }
 
 
     public void printInfo() {
@@ -147,11 +123,11 @@ public class Display {
         else return "";
     }
 
-    public void printNullBox() {
-        for(int i = 0 ; i < screen_height ; i++) {
-            System.out.print('\n');
-        }
-    }
+//    public void printNullBox() {
+//        for(int i = 0 ; i < screen_height ; i++) {
+//            System.out.print('\n');
+//        }
+//    }
 
     public String printNullBox(int t) {
         String s = "";
@@ -162,13 +138,13 @@ public class Display {
         return s;
     }
 
-    public void printUI() {
-        System.out.print("@" + music_name);
-        for(int i = 0 ; i < (screen_width - (1 + music_name.length() + 7) ) ; i++) {
-            System.out.print(' ');
-        }
-        System.out.printf("%2d:%2d\n", ((Scheduler.time / 10) / 60), ((Scheduler.time / 10) % 60));
-    }
+//    public void printUI() {
+//        System.out.print("@" + music_name);
+//        for(int i = 0 ; i < (screen_width - (1 + music_name.length() + 7) ) ; i++) {
+//            System.out.print(' ');
+//        }
+//        System.out.printf("%2d:%2d\n", ((Scheduler.time / 10) / 60), ((Scheduler.time / 10) % 60));
+//    }
 
     public String printUI(int t) {
         String s = "";

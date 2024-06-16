@@ -108,8 +108,8 @@ public class KeyCheck_And_MusicPlay extends JFrame {
         dispose();
     }
 
-    public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        new KeyCheck_And_MusicPlay("쿨(COOL)-애상"); // KeyCheck_And_MusicPlay 클래스의 인스턴스를 생성하여 프로그램 시작
-    }
+//    public static void main(String[] args) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+//        new KeyCheck_And_MusicPlay("쿨(COOL)-애상"); // KeyCheck_And_MusicPlay 클래스의 인스턴스를 생성하여 프로그램 시작
+//    }
 
 }

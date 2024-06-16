@@ -9,7 +9,7 @@ I enjoy rhythm games, and I thought it would be fun to create one myself.
 Additionally, I believe making the program run in the "cmd" rather than a GUI would make it a more unique program.
 
 Here is the diagram of my project. 
-The main class handles the selection of play mode and the music to be played.
+The Main class handles the selection of play mode and the music to be played.
 The Scheduler class is responsible for running the rhythm game.
 The MakeMusicNote class provides functionality for creating notes for the selected music.
 The KeyCheck_And_MusicPlay class handles music playback and key input.
@@ -46,7 +46,7 @@ In [ Select Difficulty ], user choose the game's difficulty level.
 
 ![J1](./img/j2_1,2.png)
 
-After making your selections, user can create notes for the selected song and selected difficulty level.
+After making user's selections, user can create notes for the selected song and selected difficulty level.
 The notes created by the user are saved as a text file, which can then be used in "Play Mode".
 
 ![J1](./img/j5.png)
